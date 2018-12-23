@@ -1,3 +1,8 @@
+<?php 
+include("includes/handlers/register-handler.php");
+include("includes/handlers/login-handler.php");
+?>
+
 <html>
 	<head>
 		<title>
@@ -55,7 +60,7 @@
 				</p>
 				<p>
 					<label for="password2">Confirm password</label>
-					<input id="password2" name="password2" type="password2" placeholder="Your password" required>	
+					<input id="password2" name="password2" type="password" placeholder="Your password" required>	
 				</p>	
 				
 				<button type="submit" name="registerButton">Sign Up</button>
