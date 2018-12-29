@@ -1,5 +1,6 @@
 <?php 
 
+
 function sanitizeFormUserName($inputText){
 	$inputText = strip_tags($inputText);
 	$inputText = str_replace(" ", "", $inputText);
@@ -30,8 +31,10 @@ if(isset($_POST['registerButton'])){
 	$password = sanitizeFormPasssword($_POST['password']);
 	$password2 = sanitizeFormPasssword($_POST['password2']);
 
-	$account = new Account();
-	
+	$wasSuccessful = $account->register($username, $firstname, $lastname, $email, $email2, $password, $password2);
+	if($wasSuccessful){
+		header("Location: index.php");
+	} 
 }
 
  ?>
