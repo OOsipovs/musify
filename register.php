@@ -26,6 +26,7 @@
 					Login to your account
 				</h2>
 				<p>
+					<?php echo $account->getError(Constants::$loginFailed); ?>
 					<label for="loginUsername">Username</label>
 					<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g bartSimpson" required>
 				</p>
@@ -60,7 +61,7 @@
 				<p>
 					<?php echo $account->getError(Constants::$emailInvalid); ?>
 					<?php echo $account->getError(Constants::$emailDontMatch); ?>
-					<?php echo $account->getError(Constants::$emailTaken); ?>
+					<?php echo $account->getError(Constants::$emailTaken	); ?>
 					<label for="email">Email</label>
 					<input id="email" name="email" type="email" placeholder="e.g bart@gmail.com" value="<?php getInputValue('email')?>" required>
 				</p>
