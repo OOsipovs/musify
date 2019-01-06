@@ -1,5 +1,7 @@
 <?php 
 	ob_start();
+	session_start();
+	
 	$timezone = date_default_timezone_set("Europe/Riga");
 	$con = mysqli_connect("localhost", "root", "", "amusify");
 	if(mysqli_connect_errno()){
