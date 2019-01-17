@@ -19,6 +19,9 @@
 			Welcome to Musify!
 		</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/register.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/register.js"></script>
 	</head>
 	<body>
 		<div id="background">
@@ -39,6 +42,9 @@
 						</p>	
 						
 						<button type="submit" name="loginButton">Log In</button>
+						<div class="hasAccountText">
+							<span id="hideLogin">Don't have an account yet? Sign up here.</span>
+						</div>
 					</form>
 
 					<form id="registerForm" action="register.php" method="POST">
@@ -88,6 +94,9 @@
 						</p>	
 						
 						<button type="submit" name="registerButton">Sign Up</button>
+						<div class="hasAccountText">
+							<span id="hideRegister">Already have an account? Log in here</span>
+						</div>
 					</form>
 				</div>
 			</div>
