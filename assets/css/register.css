@@ -135,5 +135,13 @@ html, body{
 #loginText li {
 	font-size: 20px;
 	list-style-type: none;
-	padding: 10px; 
+	padding: 5px 30px; 
+	background: url(../images/icons/checkmark.png) no-repeat 0 0;
+}
+
+#inputContainer .errorMessage {
+	color: #07d159;
+	font-size: 12px;
+	display: block;
+	margin-top:15px;
 }
