@@ -21,7 +21,11 @@ else{
 			<div id="nowPlayingBar">
 				
 				<div id="nowPlayingLeft">
-					
+					<div class="content">
+						<span class="albumLink">
+							<img src="https://i.ytimg.com/vi/rb8Y38eilRM/hqdefault.jpg?v=4ffb4222" alt="square" class="albumArtwork">
+						</span>
+					</div>
 				</div>
 				
 				<div id="nowPlayingCenter">
@@ -56,7 +60,11 @@ else{
 
 						<div class="playbackBar">
 							<span class="progressTime current">0.00</span>
-							<div class="progressBar"></div>
+							<div class="progressBar">
+								<div class="progressBarBg">
+									<div clas="progress"></div>
+								</div>
+							</div>
 							<span class="progressTime remaining">0.00</span>
 							
 						</div>
