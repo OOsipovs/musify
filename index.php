@@ -23,8 +23,20 @@ else{
 				<div id="nowPlayingLeft">
 					<div class="content">
 						<span class="albumLink">
-							<img src="https://i.ytimg.com/vi/rb8Y38eilRM/hqdefault.jpg?v=4ffb4222" alt="square" class="albumArtwork">
+							<img src="https://i.ytimg.com/vi/rb8Y38eilRM/hqdefault.jpg?v=4ffb4222" class="albumArtwork">
 						</span>
+
+						<div class="trackInfo">
+							<span class="trackName">
+								<span>Happy Birthday!</span> 
+							</span>
+
+							<span class="artistName">
+								<span>Olegs Osipovs</span> 
+							</span>
+
+						</div>
+
 					</div>
 				</div>
 				
