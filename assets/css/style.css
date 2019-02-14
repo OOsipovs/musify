@@ -1,7 +1,7 @@
-html, body{
+html, body {
 	padding: 0;
 	margin: 0;
-	height: 100%;	
+	height: 100%;
 }
 
 * {
@@ -9,125 +9,198 @@ html, body{
 	color: #fff;
 }
 
-#nowPlayingBarContainer{
+#nowPlayingBarContainer {
 	width: 100%;
-	background-color: #282828;
-	bottom: 0;
-	position: fixed;
-	min-width: 620px;
+    background-color: #282828;
+    bottom: 0;
+    position: fixed;
+    min-width: 620px;
 }
 
-#nowPlayingBar{
+#nowPlayingBar {
 	display: flex;
-	height: 90px;
-	padding:16px;
-	box-sizing: border-box;
+    height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
 }
 
 #nowPlayingLeft,
-#nowPlayingRight{
-	width:30%;
-	min-width: 180px;
+#nowPlayingRight {
+	width: 30%;
+    min-width: 180px;
 }
 
-#nowPlayingCenter{
-	width:40%;
-	max-width: 700px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+#nowPlayingRight {
+	position: relative;
+    margin-top: 16px;
 }
 
-#nowPlayingBar .content{
+#nowPlayingCenter {
+	width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nowPlayingBar .content {
 	width: 100%;
 	height: 57px;
 }
 
-.playerControls .buttons{
+.playerControls .buttons {
 	margin: 0 auto;
-	display: table;
+    display: table;
 }
 
-.buttons .controlButton{
+.controlButton {
 	background-color: transparent;
-	border: none;
-	vertical-align: middle;
+    border: none;
+    vertical-align: middle;
 }
 
-.controlButton img{
+.controlButton img {
 	width: 20px;
-	height: 20px;
+    height: 20px;
 }
 
 .controlButton.play img,
-.controlButton.play img{
+.controlButton.pause img {
 	width: 32px;
 	height: 32px;
 }
 
-.controlButton:hover{
+.controlButton:hover {
 	cursor: pointer;
 }
 
-
-.progressTime{
+.progressTime {
 	color: #a0a0a0;
-	font-size: 11px;
-	min-width: 40px;
-	text-align: center;
-}
-
-.progressBar {
-	width: 100%;
-	height: 12px;
-	display: inline-flex;
-	cursor: pointer;
+    font-size: 11px;
+    min-width: 40px;
+    text-align: center;
 }
 
 .playbackBar {
 	display: flex;
 }
 
-.progressBarBg{
-	background-color: #404040;
-	height: 4px;
+.progressBar {
 	width: 100%;
-	border-radius: 2px;
+    height: 12px;
+    display: inline-flex;
+    cursor: pointer;
 }
 
-.progress{
+.progressBarBg {
+	background-color: #404040;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.progress {
 	background-color: #a0a0a0;
-	height: 4px;
-	width: 0;
-	border-radius: 2px;
+    height: 4px;
+    width: 0;
+    border-radius: 2px;
 }
 
 .playbackBar .progressBar {
 	margin-top: 3px;
 }
 
-#nowPlayingLeft .albumArtwork{
+#nowPlayingLeft .albumArtwork {
 	height: 100%;
-	max-width: 87px;
-	margin-right: 15px;
-	float:left;
-	background-size: cover;
+    max-width: 57px;
+    margin-right: 15px;
+    float: left;
+    background-size: cover;
 }
 
-#nowPlayingLeft .trackInfo{
+#nowPlayingLeft .trackInfo {
 	display: table;
 }
 
-#nowPlayingLeft .trackInfo .trackName{
+#nowPlayingLeft .trackInfo .trackName {
 	margin: 6px 0;
-	display: inline-block;
-	width: 100%;
+    display: inline-block;
+    width: 100%;
 }
 
 #nowPlayingLeft .trackInfo .artistName span {
 	font-size: 12px;
-	color: #a0a0a0;
+    color: #a0a0a0;
+}
 
+.volumeBar {
+	width: 180px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar {
+	width: 125px;
+}
+
+
+#topContainer{
+	min-height: 100%;
+	width: 100%;
+}
+
+#navBarContainer {
+	width: 220px;
+	height: 100vh;
+	position: fixed;
+	background-color: #000;
+	top: 0;
+	left: 0;
+}
+
+.navBar {
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	-ms-flex-direction: column;
+}
+
+.logo {
+	margin-bottom: 10px;	
+}
+
+.logo img {
+	width: 56px;
+}
+
+.navBar .group {
+	border-top: 1px solid #a0a0a0;
+	padding: 10px 0;
+}
+
+.navItem {
+	padding: 10px 0;
+	font-size: 15px;
+	font-weight: 700;
+	display: block;
+	letter-spacing: 1px;
+	position: relative;
+}
+
+.navItemLink {
+	color: #a0a0a0;
+	text-decoration: none;
+}
+
+.navItemLink:hover {
+	color: #ffffff;
+}
+
+.navItemLink .icon{
+	position: absolute;
+	right: 0;
+	top: 6px;
+	width: 25px;
 }
 
 
