@@ -1,29 +1,26 @@
-<?php 
-include("includes/config.php");
+	
+<?php include("includes/header.php"); ?>
 
-//session_destroy();
+<h1 class="pageHeadingBig">You might also like</h1>
 
-if(isset($_SESSION['userLoggedIn'])){
-	$userLoggedIn = $_SESSION['userLoggedIn'];
-}
-else{
-	header("Location: register.php");
-}
-?>
+<div class="gridViewContainer">
+	<?php 
 
-<html>
-	<head>
-		<title>Welcome to Musify</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	</head>
-	<body>
-		<div id="mainContainer">
-				<div id="topContainer">
-					<?php include("includes/navBarContainer.php") ?>
-				</div>
+		$albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
+		while($row = mysqli_fetch_array($albumQuery)){
+			
+			echo "<div class='gridViewItem'>
+					
+					<img src='" . $row['artworkPath'] . "'>
+					
+					<div class='gridViewInfo'>"
+						. $row['title'] .
+					"</div>
 
-				<?php include("includes/nowPlayingBar.php")?>
-			</div>
-		</div>
-	</body>
-</html>
+				</div>";
+
+		}
+	?>	
+</div>
+
+<?php include("includes/footer.php"); ?>
