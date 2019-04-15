@@ -25,10 +25,20 @@
 			return $this->title;
 		}
 
+		public function getArtist(){
+			
+			return new Artist($this->con, $this->artistId);
+		}
+
+		public function getGenre(){
+			return $this->genre;
+		}
+
 		public function getArtworkPath(){
 			
-			return $this->title;
+			return $this->artworkPath;
 		}
+
 	}
 
 ?>
