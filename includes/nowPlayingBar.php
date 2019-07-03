@@ -1,9 +1,10 @@
 <?php 
-	$songQuery = mysqli_query($con, "SELECT * FROM songs ORDER BY RAND() LIMIT 10");
+	$songQuery = mysqli_query($con, "SELECT id FROM songs ORDER BY RAND() LIMIT 10");
+
 	$resultArray = array();
-	
-	while($row = mysqli_fetch_array(songQuery)) {
-		array_push($resultArray, $row['id'])
+
+	while($row = mysqli_fetch_array($songQuery)) {
+		array_push($resultArray, $row['id']);
 	}
 
 	$jsonArray = json_encode($resultArray);
@@ -11,7 +12,41 @@
 ?>
 
 <script>
-	console.log(<?php echo $jsonArray; ?>);
+	
+	$(document).ready(function(){
+
+		currentPlayList = <?php echo $jsonArray; ?>;
+		console.log(currentPlayList)
+		audioElement = new Audio();
+		setTrack(currentPlayList[0], currentPlayList, false);
+	});
+
+	function setTrack(trackId, newPlayList, play){
+		
+		$.post("includes/handlers/ajax/getSongJson.php", { songId: trackId }, function(data) {
+			
+			var track = JSON.parse(data);
+			 audioElement.setTrack(track.path);
+			 audioElement.play();
+		});
+
+		if(play){
+			audioElement.play();
+		}
+	}
+
+	function playSong(){
+		$(".controlButton.play").hide();
+		$(".controlButton.pause").show();
+		audioElement.play();
+	}
+
+	function pauseSong(){
+		$(".controlButton.play").show();
+		$(".controlButton.pause").hide();
+		audioElement.pause();
+	}
+
 </script>
 
 <div id="nowPlayingBarContainer">
@@ -50,11 +85,11 @@
 					<img src="assets/images/icons/previous.png" alt="Previous">
 				</button>
 
-				<button class="controlButton play" title="Play button">
+				<button class="controlButton play" title="Play button" onclick="playSong()">
 					<img src="assets/images/icons/play.png" alt="Play">
 				</button>
 
-				<button class="controlButton pause" title="Pause button" style="display: none;">
+				<button class="controlButton pause" title="Pause button" onclick="pauseSong()" style="display: none;">
 					<img src="assets/images/icons/pause.png" alt="Pause">
 				</button>
 
